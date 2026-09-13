@@ -1,0 +1,21 @@
+{
+  "grid_shape": [
+    278,
+    283
+  ],
+  "XMIN": 361151.0,
+  "YMAX": 2511101.0,
+  "CELL": 30.0,
+  "STEP": 33,
+  "ncol": 283,
+  "n_grid_points": 78674,
+  "n_valid_all": 31889,
+  "n_valid_complete": 30711,
+  "coordinate_formula": "X = XMIN + (jj*STEP+0.5)*CELL; Y = YMAX - (ii*STEP+0.5)*CELL; ii,jj=divmod(arange(n),283)",
+  "source_base": "C:\\Users\\han\\Desktop\\粤西论文文件夹\\YueXi0518\\YueXi0518",
+  "sha256": {
+    "yuexi_grid_canonical.csv": "85c727ea67eb8cf1639422b886420b8bcd1469360336fde55a885ff68852bdf2",
+    "yuexi_points_all_31889.csv": "a56c88e03a330697daf00342f6af79e817d894e6e4d21652a3010382c146a4b1",
+    "yuexi_points_complete_30711.csv": "bf2275a3ce726fb86e7e833b50484a351398384c8281e91e5aa9815d3861705d"
+  }
+}
