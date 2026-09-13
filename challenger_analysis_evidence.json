@@ -1,0 +1,48 @@
+{
+  "重建坐标正典": {
+    "坐标公式": "X = XMIN + (jj*STEP+0.5)*CELL; Y = YMAX - (ii*STEP+0.5)*CELL; ii,jj=divmod(arange(n),283)",
+    "网格": [
+      278,
+      283
+    ],
+    "n_valid_all": 31889,
+    "n_valid_complete": 30711,
+    "sha256": {
+      "yuexi_grid_canonical.csv": "85c727ea67eb8cf1639422b886420b8bcd1469360336fde55a885ff68852bdf2",
+      "yuexi_points_all_31889.csv": "a56c88e03a330697daf00342f6af79e817d894e6e4d21652a3010382c146a4b1",
+      "yuexi_points_complete_30711.csv": "bf2275a3ce726fb86e7e833b50484a351398384c8281e91e5aa9815d3861705d"
+    }
+  },
+  "varpart_与_partialR2": {
+    "纯LUCC[a]": 0.34302,
+    "纯环境[b]": 0.06046,
+    "共享[c]": 0.54136,
+    "残差[d]": 0.05516,
+    "纯环境显著性": "F=3060.7, p=0.001 (999置换)",
+    "OLS交叉验证": {
+      "纯LUCC": 0.342904,
+      "纯环境": 0.06047,
+      "共享": 0.541497,
+      "残差": 0.055129
+    }
+  },
+  "空间模型_全量30711_SEM": {
+    "OLS残差MoranI": 0.5062,
+    "SEM_lambda": 0.8567,
+    "SEM_AIC": -118841.7,
+    "OLS_AIC": -98981.5,
+    "TEM符号反转": "OLS 0.0012(p=0.45) → SEM -0.0150(p<0.001)",
+    "slope": "OLS 0.0126 → SEM 0.0054",
+    "DEM": "OLS 0.0407 → SEM 0.0323"
+  },
+  "MoranI对账": {
+    "forest残差": 0.751,
+    "全域残差": 0.6215,
+    "论文正典": "0.752 / 0.615"
+  },
+  "三个旧验算项目": {
+    "gdverse": "rank_stability: raw slope第1, resid DEM第1/slope跌3-4",
+    "geoshapley": "XGB CV R²=0.683; GeoShapley后 aspect/PRE/GDP升前3, DEM/slope崩塌",
+    "mgwr": "numba冲突, 空间模型改用spatialreg"
+  }
+}
