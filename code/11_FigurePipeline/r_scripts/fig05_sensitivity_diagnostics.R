@@ -59,7 +59,7 @@ p_d <- ggplot(ks, aes(x = k, y = eta2)) +
   geom_vline(xintercept = 0.50, colour = YUEXI$neutral_dark, linetype = "dashed", linewidth = 0.45) +
   annotate("text", x = 0.30, y = 0.13, label = "reference\nk = 0.30", size = 2.2, colour = YUEXI$neutral_mid) +
   annotate("text", x = 0.50, y = 0.49, label = "model run\nk = 0.50", size = 2.2, colour = YUEXI$neutral_dark, hjust = 0) +
-  coord_cartesian(xlim = c(0.02, 1.55), ylim = c(0, 1.05), clip = "on") +
+  coord_cartesian(xlim = c(0.02, 1.65), ylim = c(0, 1.05), clip = "on") +
   labs(x = "InVEST half-saturation constant (k)", y = "η²") + figure_theme(base_size = 6.6)
 
 fig <- (p_a | p_b) / (p_c | p_d) +

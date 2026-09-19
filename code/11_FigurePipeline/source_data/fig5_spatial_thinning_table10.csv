@@ -1,8 +1,8 @@
 spacing_m,n_retained,moran_I,eta2,delta_eta2,provenance
-1000,11475,0.568,0.887,+0.001,Current source DOCX Table 10; historical thinning producer not yet independently reproduced
-2000,4518,0.523,0.887,+0.001,Current source DOCX Table 10; historical thinning producer not yet independently reproduced
-3000,2193,0.468,0.884,-0.002,Current source DOCX Table 10; historical thinning producer not yet independently reproduced
-5000,844,0.459,0.885,-0.001,Current source DOCX Table 10; historical thinning producer not yet independently reproduced
-7000,489,0.378,0.885,-0.001,Current source DOCX Table 10; historical thinning producer not yet independently reproduced
-10000,241,0.406,0.900,+0.014,Current source DOCX Table 10; historical thinning producer not yet independently reproduced
-Full set,31219,0.615,0.886,—,Current source DOCX Table 10; historical thinning producer not yet independently reproduced
+1000,14725,0.585,0.886,+0.000,Reproduced by code/07_SpatialAutocorrelation_Table8/run.py after the 2026-09-16 ravel()/KNN fix; matches manuscript Table 10. Previous content (11475/4518/2193/844/489/241/31219) was a stale copy.
+2000,5679,0.534,0.890,+0.004,Reproduced by code/07_SpatialAutocorrelation_Table8/run.py after the 2026-09-16 ravel()/KNN fix; matches manuscript Table 10. Previous content (11475/4518/2193/844/489/241/31219) was a stale copy.
+3000,2906,0.503,0.888,+0.002,Reproduced by code/07_SpatialAutocorrelation_Table8/run.py after the 2026-09-16 ravel()/KNN fix; matches manuscript Table 10. Previous content (11475/4518/2193/844/489/241/31219) was a stale copy.
+5000,1221,0.494,0.890,+0.004,Reproduced by code/07_SpatialAutocorrelation_Table8/run.py after the 2026-09-16 ravel()/KNN fix; matches manuscript Table 10. Previous content (11475/4518/2193/844/489/241/31219) was a stale copy.
+7000,694,0.434,0.881,-0.005,Reproduced by code/07_SpatialAutocorrelation_Table8/run.py after the 2026-09-16 ravel()/KNN fix; matches manuscript Table 10. Previous content (11475/4518/2193/844/489/241/31219) was a stale copy.
+10000,339,0.348,0.894,+0.008,Reproduced by code/07_SpatialAutocorrelation_Table8/run.py after the 2026-09-16 ravel()/KNN fix; matches manuscript Table 10. Previous content (11475/4518/2193/844/489/241/31219) was a stale copy.
+Full set,31889,0.622,0.886,—,Reproduced by code/07_SpatialAutocorrelation_Table8/run.py after the 2026-09-16 ravel()/KNN fix; matches manuscript Table 10. Previous content (11475/4518/2193/844/489/241/31219) was a stale copy.

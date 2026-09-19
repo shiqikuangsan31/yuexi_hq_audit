@@ -8,7 +8,7 @@ from matplotlib.colors import ListedColormap, BoundaryNorm
 from matplotlib.patches import Patch
 plt.rcParams["font.family"]="Times New Roman"; plt.rcParams["axes.unicode_minus"]=False
 
-B=r"C:/Users/han/Desktop/粤西论文文件夹/YueXi0518/YueXi0518"
+B=os.environ.get("YUEXI_BASE") or r"C:/Users/han/Desktop/粤西论文文件夹/YueXi0518/YueXi0518"
 OUT=B+r"\code\figures_hires\Fig2_lucc_hq_arcgis.png"
 LUCC=B+r"\lucc\lucc2020.tif"
 HQ=B+r"\生境质量结果输出\SJ2020\quality_c_SJ2020.tif"

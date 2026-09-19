@@ -2,6 +2,7 @@
 This is non-visual preprocessing. It must not mutate the canonical data."""
 from __future__ import annotations
 
+import os
 import hashlib
 import json
 from pathlib import Path
@@ -11,7 +12,7 @@ import pandas as pd
 from libpysal.weights import KNN
 from esda.moran import Moran, Moran_Local
 
-ROOT = Path(r"C:\Users\han\Desktop\粤西论文文件夹")
+ROOT = Path(os.environ.get("YUEXI_ROOT") or r"C:\Users\han\Desktop\粤西论文文件夹")
 BASE = ROOT / "YueXi0518" / "YueXi0518"
 CACHE = BASE / "code" / "cache"
 OUT = ROOT / "_YUEXI_FIGURE_REBUILD_20260912" / "04_figures" / "source_data"

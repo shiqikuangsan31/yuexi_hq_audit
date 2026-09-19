@@ -11,8 +11,8 @@ import matplotlib.font_manager as fm
 plt.rcParams["font.family"]="Times New Roman"
 plt.rcParams["axes.unicode_minus"]=False
 
-B=r"C:/Users/han/Desktop/粤西论文文件夹/YueXi0518/YueXi0518"
-BD=r"C:\Users\han\yuexi_fmt\boundaries"
+B=os.environ.get("YUEXI_BASE") or r"C:/Users/han/Desktop/粤西论文文件夹/YueXi0518/YueXi0518"
+BD=os.environ.get("YUEXI_BOUNDARIES") or r"C:\Users\han\yuexi_fmt\boundaries"
 OUT=B+r"\code\figures_hires\Fig1_studyarea_arcgis.png"
 
 # ---------- read GeoJSON polygons ----------

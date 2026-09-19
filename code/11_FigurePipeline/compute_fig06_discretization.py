@@ -1,11 +1,13 @@
 """Compute exact 4-method x 3-bin residual-q sensitivity source for Fig06.
 Non-visual Python preprocessing only; R remains exclusive renderer."""
+import os
 import numpy as np
 import pandas as pd
 import jenkspy
 from pathlib import Path
 
-ROOT=Path(r"C:\Users\han\Desktop\粤西论文文件夹")
+BASE=Path(os.environ.get("YUEXI_BASE") or r"C:\Users\han\Desktop\粤西论文文件夹\YueXi0518\YueXi0518")
+ROOT=BASE.parent.parent
 BASE=ROOT/"YueXi0518"/"YueXi0518"
 OUT=ROOT/"_YUEXI_FIGURE_REBUILD_20260912"/"04_figures"/"source_data"
 FACTORS=["slope","DEM","TEM"]

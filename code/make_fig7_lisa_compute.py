@@ -2,7 +2,7 @@
 # Step A: compute LISA clusters of forest within-class HQ residuals (real data, esda)
 # and export point coords (UTM) + cluster class to CSV for ArcGIS map rendering.
 import os, numpy as np, csv
-BASE=r"C:/Users/han/Desktop/粤西论文文件夹/YueXi0518/YueXi0518"
+BASE=os.environ.get("YUEXI_BASE") or r"C:/Users/han/Desktop/粤西论文文件夹/YueXi0518/YueXi0518"
 XMIN,YMAX,CELL,STEP=361151.0,2511101.0,30.0,33
 def gd(n): return np.load(os.path.join(BASE,f"gd_{n}.npy"))
 HQ,LUCC=gd("HQ").ravel(),gd("LUCC").ravel(); ncol=283

@@ -43,7 +43,7 @@ Dependencies (cache path): numpy, scipy, esda, libpysal
 import os, glob
 import numpy as np
 
-BASE  = r"C:/Users/han/Desktop/粤西论文文件夹/YueXi0518/YueXi0518"
+BASE  = os.environ.get("YUEXI_BASE") or r"C:/Users/han/Desktop/粤西论文文件夹/YueXi0518/YueXi0518"
 CACHE = os.path.join(BASE, "code", "cache")
 SJ    = lambda *p: os.path.join(BASE, "生境质量结果输出", *p)
 STEP  = 33

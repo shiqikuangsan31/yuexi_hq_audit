@@ -4,7 +4,7 @@ import arcpy, json, numpy as np, csv
 import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 plt.rcParams["font.family"]="Times New Roman"; plt.rcParams["axes.unicode_minus"]=False
-B=r"C:/Users/han/Desktop/粤西论文文件夹/YueXi0518/YueXi0518"
+B=os.environ.get("YUEXI_BASE") or r"C:/Users/han/Desktop/粤西论文文件夹/YueXi0518/YueXi0518"
 OUT=B+r"\code\figures_hires\Fig7_lisa_arcgis.png"
 meta=json.load(open(B+r"\code\lisa_meta.json"))
 gI=meta["global_moran"]; pct=meta["pct"]

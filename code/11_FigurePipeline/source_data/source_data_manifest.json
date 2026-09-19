@@ -1,0 +1,41 @@
+{
+  "canonical_arrays": {
+    "HQ": "66d6062484df7eea9137065afec3f4008037881b77d21a73268f86b787aa18bd",
+    "LUCC": "a3e0975641392de5511e15ea067154048e1f4d090a0636244373d4ccc4cdb26a",
+    "DEM": "5e33b097205ad8b5de437dc612cc77feb2d4dc6c934adde354c150779a1e87fb",
+    "slope": "d2ceed1baba1182629afe17bcd8fb1b3a684307424e34ad6b0e8144f5825bcf7",
+    "TEM": "a912131c065aa79a1d5ebfeecc12c2d843a6628c61ace4ab3a16ef6f8614293a",
+    "PRE": "a69b07fdf7418c89e550109d93a3aa49bf7b91758e30db562b9f7bac1bae36b2",
+    "NDVI": "e566b95be8fe6f2ab53b0a989d8d4de7d1800d82f3d450d3128d72202899269d",
+    "NLI": "22fd9785b2f570e7c3e7503e023d817902448297f44cf3c35bdb750d000b2794",
+    "POP": "4df2af0644a92ae7bb6b6658d01b67a4b2ec790fa37ab2ce587033fa21836f44",
+    "GDP": "6cafada346b71c79c760bb10d9be18e5513afc0aaed3492deed0a67a5e53d5a0",
+    "roads": "776fcbfc375f6c24bdc0928e4946764ea6adff476761094e2bc8d7deb4000efb",
+    "railways": "72c6ed454bbdf2ff8cbb58d5362c8d7e3900b1b7387c36cf6107cf1cb1519a73",
+    "water": "9531580fa16e31fb80b536c31956d8d0106525fa2c40421e1ab6374dcd796c4d",
+    "soiltype": "703a6200e7ed4778f39fd73de86fdcb8b8891bd7c29dd356a6eadf6c300375f3",
+    "aspect": "fb607a96adbb74654dd5320e4226a71e94dc8568a2a4f076eafc1a82fd513d63"
+  },
+  "cache_arrays": {
+    "built_threat_2020": "ab811943a883df70e771e3bd9824b3cad7bbaeec1438e39efa73087565d8d331",
+    "habitat_2020": "7673ff1a880c8a711fe4782adf3e995986ea10e87e9317bee371dc40a01a5884",
+    "degsum_2020": "2691cd67ae4fb393e34d3ae81a6a7c6be39a9a9f9da92066c5b0c9d1a2018b12"
+  },
+  "treeshap_artifact": {
+    "path": "C:\\Users\\han\\Desktop\\\u7ca4\u897f\u8bba\u6587\u6587\u4ef6\u5939\\audit_20260824\\geoshapley_exp\\treeshap_values.npy",
+    "sha256": "3278b6976735ecd144226f4b3a8ad8d8b87b44ffa4ed693522e935e83eb7c6fe",
+    "shape": [
+      30711,
+      13
+    ]
+  },
+  "counts": {
+    "n_valid": 31889,
+    "n_complete": 30711,
+    "n_forest": 15440
+  },
+  "moran": {
+    "I": 0.7515896037360543,
+    "p_sim": 0.001
+  }
+}

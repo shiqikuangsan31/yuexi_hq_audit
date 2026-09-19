@@ -33,7 +33,7 @@ plt.rcParams["axes.unicode_minus"]=False
 from matplotlib.colors import ListedColormap, BoundaryNorm
 from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
 
-BASE  = r"C:/Users/han/Desktop/粤西论文文件夹/YueXi0518/YueXi0518"
+BASE  = os.environ.get("YUEXI_BASE") or r"C:/Users/han/Desktop/粤西论文文件夹/YueXi0518/YueXi0518"
 CACHE = os.path.join(BASE, "code", "cache")
 OUT   = os.path.join(BASE, "code", "figures_hires"); os.makedirs(OUT, exist_ok=True)
 XMIN, YMAX, CELL, STEP = 361151.0, 2511101.0, 30.0, 33

@@ -38,7 +38,7 @@ try:
 except ImportError:
     print("[style] SciencePlots not available, using default")
 
-BASE  = r"C:/Users/han/Desktop/粤西论文文件夹/YueXi0518/YueXi0518"
+BASE  = os.environ.get("YUEXI_BASE") or r"C:/Users/han/Desktop/粤西论文文件夹/YueXi0518/YueXi0518"
 CACHE = os.path.join(BASE, "code", "cache")
 OUT   = os.path.join(BASE, "code", "figures"); os.makedirs(OUT, exist_ok=True)
 XMIN, YMAX, CELL, STEP = 361151.0, 2511101.0, 30.0, 33

@@ -7,6 +7,7 @@
 #   hole  -> 1 for interior rings, 0 for exterior rings
 #   order -> vertex order within the ring
 # CRS of BJ.shp is EPSG:32649 (UTM 49N); the LISA point table is in the same CRS.
+import os
 import warnings
 
 import geopandas as gpd
@@ -14,7 +15,7 @@ import pandas as pd
 
 warnings.filterwarnings("ignore")
 
-SHP = r"C:\Users\han\Desktop\粤西论文文件夹\YueXi0518\YueXi0518\BJ\BJ.shp"
+SHP = os.path.join(os.environ.get("YUEXI_BASE") or r"C:\Users\han\Desktop\粤西论文文件夹\YueXi0518\YueXi0518", "BJ", "BJ.shp")
 OUT = r"C:\yuexi_r\_YUEXI_FIGURE_REBUILD_20260912\04_figures\source_data\fig4_boundary.csv"
 
 g = gpd.read_file(SHP)

@@ -22,6 +22,18 @@ pip install -r requirements.txt      # numpy 等
 
 若均未命中，脚本会抛出明确错误并提示设置 `YUEXI_BASE`。
 
+**旧版脚本**（`reproduce_paper.py`、`make_fig*.py`、`11_FigurePipeline/` 中的
+`compute_fig06_discretization.py` / `export_fig4_boundary.py` / `prepare_figure_source_data.py`）
+保留作者本机路径为**默认值**，同时支持环境变量覆盖：
+
+| 环境变量 | 含义 |
+|---|---|
+| `YUEXI_BASE` | 数据根目录（含 `gd_*.npy`、`cache/`、`生境质量结果输出/`） |
+| `YUEXI_ROOT` | 论文工程根目录（`YUEXI_BASE` 的祖父目录） |
+| `YUEXI_BOUNDARIES` | 边界 shapefile 目录（仅 `make_fig1_studyarea.py`） |
+
+未设置时行为与改动前完全一致。
+
 ---
 
 ## 目录结构与稿件编号对照
