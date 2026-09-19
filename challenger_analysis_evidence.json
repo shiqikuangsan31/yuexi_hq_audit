@@ -38,7 +38,7 @@
   "MoranI对账": {
     "forest残差": 0.751,
     "全域残差": 0.6215,
-    "论文正典": "0.752 / 0.615"
+    "论文正典": "0.751 / 0.622"
   },
   "三个旧验算项目": {
     "gdverse": "rank_stability: raw slope第1, resid DEM第1/slope跌3-4",

@@ -1,0 +1,14 @@
+factor,mean_abs_SHAP
+DEM,0.044718087
+Slope,0.08436594
+Aspect,0.006458997
+Precipitation,0.014969215
+Temperature,0.010876294
+NDVI,0.020327559
+Population,0.00693442
+GDP,0.0070296875
+Night-time light,0.016228197
+Soil type,0.006004775
+Roads,0.0124193765
+Railways,0.00771409
+Water,0.006028884

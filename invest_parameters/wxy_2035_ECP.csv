@@ -1,0 +1,4 @@
+MAX_DIST,WEIGHT,THREAT,DECAY,DESCRIP,BASE_PATH,CUR_PATH,FUT_PATH
+1,0.2,cropland,linear,cropland,,ECP35gd_c.tif,
+8,1,built,exponential,built,,ECP35jzyd_c.tif,
+3,0.5,unused,exponential,unused,,ECP35wlyd_c.tif,

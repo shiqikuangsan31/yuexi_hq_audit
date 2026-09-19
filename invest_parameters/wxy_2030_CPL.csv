@@ -1,0 +1,4 @@
+MAX_DIST,WEIGHT,THREAT,DECAY,DESCRIP,BASE_PATH,CUR_PATH,FUT_PATH
+1,0.2,cropland,linear,cropland,,CPL30gd_c.tif,
+8,1,built,exponential,built,,CPL30jzyd_c.tif,
+3,0.5,unused,exponential,unused,,CPL30wlyd_c.tif,

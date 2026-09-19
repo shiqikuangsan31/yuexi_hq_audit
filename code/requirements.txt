@@ -1,0 +1,6 @@
+numpy>=1.24
+scipy>=1.10
+esda>=2.5
+libpysal>=4.9
+matplotlib>=3.7
+# Path A additionally requires arcpy (ships with ArcGIS Pro 3.x python env)
