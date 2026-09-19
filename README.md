@@ -90,7 +90,11 @@ invest_parameters/
 
 ## 5. Manuscript
 
-`manuscript/` contains the submitted manuscript.
+`manuscript/` contains the current submission candidate:
+
+- `改33_V9_FINAL.docx` / `.pdf` — the manuscript with the two-stage Geodetector
+  audit-and-sensitivity workflow, including the variation-partitioning and
+  spatial-error cross-checks reported in Section 4.7 (Robustness Verification).
 
 ---
 
@@ -101,4 +105,4 @@ See `code/requirements.txt`. Core Python dependencies: `numpy`, `scipy`, `pandas
 
 ---
 
-*Last updated: 2026-09-17*
+*Last updated: 2026-09-19*
