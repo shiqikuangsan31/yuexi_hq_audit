@@ -1,6 +1,6 @@
 # 粤西 InVEST 生境质量论文 — 可复现代码包
 
-**论文**: Decomposing the InVEST Habitat Quality Index: Variance-Partitioning and Two-Stage Geodetector Framework for the Yuexi Region, South China
+**论文**: Auditing land-cover-structured variance in InVEST habitat quality: implications for stratified driver analyses
 
 本包为稿件 Data Availability 所声明的分析脚本。`python MASTER_RUN.py` 可一键复现
 稿件全部表格与图注数值（10 个模块，确定性算法，无需 ArcGIS）。

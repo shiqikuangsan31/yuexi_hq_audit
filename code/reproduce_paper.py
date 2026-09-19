@@ -5,9 +5,8 @@ reproduce_paper.py  (FULL COVERAGE)
 ==================================================================================
 Full, reproducible analysis pipeline for:
 
-  "Diagnosing and Correcting Endogeneity in InVEST Habitat Quality Driver
-   Attribution: A Variance-Partitioning and Two-Stage Geodetector Framework
-   Applied to the Yuexi Region, South China"
+  "Auditing land-cover-structured variance in InVEST habitat quality:
+   implications for stratified driver analyses"
 
 Reproduces EVERY quantitative result in the manuscript from the raw rasters:
 
@@ -232,7 +231,7 @@ def main():
     print("\n===== Module 3: Cross-variable ICC (Table 7) =====")
     for nm in ["HQ", "DEM", "PRE"]:
         print(f"  {nm}: ICC={decomp(gd(nm), LUCC)['ICC']:.4f}")
-    print("  [paper] HQ 0.886 ; DEM 0.211 ; PRE 0.012 (74x)")
+    print("  [paper] HQ 0.886 ; DEM 0.212 ; PRE 0.012 (77x)")
 
     print("\n===== Module 4: Multi-temporal ICC (Table 5, Fig 3a) =====")
     for yr in ["2010", "2015"]:
@@ -241,7 +240,7 @@ def main():
     print(f"  2020: ICC={r['ICC']:.4f} forestCV={r['forest_cv']:.1f}%")
     rr = decomp(ca("hq_2025"), ca("luc_2025"))
     print(f"  2025: meanHQ={rr['mean']:.4f} ICC={rr['ICC']:.4f} forestCV={rr['forest_cv']:.1f}%")
-    print("  [paper] 0.881 / 0.885 / 0.886 / 0.943")
+    print("  [paper] 0.880 / 0.885 / 0.886 / 0.943")
 
     print("\n===== Module 5: Eight-scenario ICC (Table 8, Fig 3b,c) =====")
     for sc in SCEN:
@@ -262,7 +261,7 @@ def main():
     print(f"  complete-case N={hq.size}")
     for f, qr, qd in rows[:6]:
         print(f"  {f:10s} q_raw={qr:.3f} q_resid={qd:.3f} retain={100*qd/qr:.1f}%")
-    print("  [paper] slope 0.517->0.147(28%) DEM 0.476->0.309(65%) TEM 0.464->0.292(63%)")
+    print("  [paper] slope 0.517->0.147(28.4%) DEM 0.476->0.309(64.8%) TEM 0.464->0.292(62.9%)")
 
     # interaction detector: all C(13,2)=78 pairs on RAW HQ (manuscript Table 9 note)
     st = {f: _strat(f, gd(f)[mask], "quantile") for f in FACTORS}
@@ -295,13 +294,14 @@ def main():
     full_e = decomp(hqf, luf)["ICC"]
     full_m = knn_moran(xs, ys, hqs, 8)
     print(f"  Full set : N={hqs.size:,} Moran={full_m:.4f} (Table 10: 0.622) eta2={full_e:.3f}")
-    print("  spacing | N retained | Moran's I |   eta2 |  d_eta2")
+    print("  spacing | N retained | Moran's I |   eta2 |  d_eta2 (3dp = 稿件口径)")
     order = np.arange(hqs.size)                     # deterministic canonical order
     for d in [1000, 2000, 3000, 5000, 7000, 10000]:
         keep = greedy_thin(xs, ys, d, order)
         e = decomp(hqs[keep], lus[keep])["ICC"]
         mm = knn_moran(xs[keep], ys[keep], hqs[keep], 8)
-        print(f"  {d:7,} | {keep.size:10,} | {mm:9.3f} | {e:6.3f} | {e-full_e:+.3f}")
+        # 并列两种口径：未舍入差 + 三位小数差（稿件 Table 10 采用后者，Methods 已声明）
+        print(f"  {d:7,} | {keep.size:10,} | {mm:9.3f} | {e:6.3f} | {e-full_e:+.3f}  (3dp: {round(e,3)-round(full_e,3):+.3f})")
     try:
         from libpysal.weights import KNN
         from esda.moran import Moran
@@ -315,9 +315,14 @@ def main():
     BT = ca("built_threat_2020")
     f = (LUCC == 2) & np.isfinite(HQ) & np.isfinite(BT); hf, bf = HQ[f], BT[f]
     qv = np.quantile(bf, [0, .25, .5, .75, 1.0])
-    mns = [hf[(bf >= qv[i]) & ((bf <= qv[i+1]) if i == 3 else (bf < qv[i+1]))].mean() for i in range(4)]
+    # 右闭分箱 (qv[i], qv[i+1]]；首箱并入最小值 —— 与 pandas.qcut 默认约定一致。
+    # 手稿 Fig. 2b 题注采用该约定；左闭右开 [lo, hi) 会给出 Q3=0.543、n=[3859,3858,3827,3896]。
+    masks = [((bf >= qv[i]) if i == 0 else (bf > qv[i])) & (bf <= qv[i + 1]) for i in range(4)]
+    mns = [hf[m].mean() for m in masks]
+    nns = [int(m.sum()) for m in masks]
     print(f"  Q1-Q4 = {mns[0]:.3f}/{mns[1]:.3f}/{mns[2]:.3f}/{mns[3]:.3f}  dHQ={mns[0]-mns[3]:.3f}")
-    print("  [paper] 0.732/0.621/0.543/0.483  dHQ=0.249")
+    print(f"  n = {nns[0]}/{nns[1]}/{nns[2]}/{nns[3]}")
+    print("  [paper] 0.732/0.621/0.542/0.483  dHQ=0.249  n=3864/3857/3870/3849")
 
     print("\n===== Module 10: Monte Carlo Hj +/-20% (Fig 5c) =====")
     H = ca("habitat_2020"); D = ca("degsum_2020")
