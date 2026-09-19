@@ -55,3 +55,21 @@ Rscript fig06_driver_diagnostics.R
 
 `source_data/*.csv` 为上述 Python 脚本产出的确定性中间表，包含每张图的作图数值。
 其中 `provenance` 列注明该表的来源（如 Table 10）。
+
+`source_data/source_data_manifest.json` 记录 15 个正典栅格数组的 SHA-256、
+TreeSHAP 产物的来源与形状、样本计数（31,889 / 30,711 / 15,440）以及森林残差的
+全局 Moran's I（0.7516 → 3 位小数 0.752）。
+
+> ⚠️ **`source_data/*.csv` 必须是纯数据表，不得加入 `#` 注释行。**
+> R 的 `read.csv()` 默认 `comment.char = ""`，注释行会被当作数据行，
+> 导致 `more columns than column names` 而使整条图件管线中断。
+
+### 分层口径说明（aspect 与其余因子的差异）
+
+`fig6_q_raw_residual.csv` 中**除 `aspect` 外**所有因子均采用统一的 **5 分位（quintile）** 分层；
+`aspect` 在本表中按 **4 分位** 分层，以与 Fig. 6 管线保持一致。
+
+这与稿件 **Table 9** 不同：Table 9 对 `aspect` 采用 **四个基本方位（four cardinal sectors）**
+分层，因此 Table 9 中 `aspect` 的 q 统计量与本表的数值**不可直接比较**。
+稿件 Table 9 题注已就此显式声明。
+

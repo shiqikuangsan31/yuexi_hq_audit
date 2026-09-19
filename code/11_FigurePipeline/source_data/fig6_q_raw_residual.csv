@@ -1,7 +1,3 @@
-# NOTE: All factors except 'aspect' use uniform 5-quantile (quintile) stratification.
-# 'aspect' uses 4-quantile stratification here for consistency with Fig. 6 pipeline,
-# which differs from the four-cardinal-sector stratification used in Table 9.
-# Consequently, aspect q-statistics in this file differ from those in Table 9.
 factor,q_raw,q_residual
 slope,0.5168662714585719,0.14687207418948411
 DEM,0.4759880631910972,0.3086434677520261
