@@ -92,7 +92,7 @@ invest_parameters/
 
 `manuscript/` contains the current submission candidate:
 
-- `改33_V9_FINAL.docx` / `.pdf` — the manuscript with the two-stage Geodetector
+- `改34_V9_FINAL.docx` / `.pdf` — the manuscript with the two-stage Geodetector
   audit-and-sensitivity workflow, including the variation-partitioning and
   spatial-error cross-checks reported in Section 4.7 (Robustness Verification).
 
